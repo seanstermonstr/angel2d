@@ -55,7 +55,9 @@ SYSSRCS = 							\
 SRCS =								\
 	stdafx.cpp						\
 	Main.cpp						\
-	Units.cpp						
+	Units.cpp						\
+	Planes.cpp						\
+	Target.cpp
 
 SYSOBJS = $(patsubst %.cpp,%.o,$(SYSSRCS))
 OBJS = $(patsubst %.cpp,%.o,$(SRCS))
