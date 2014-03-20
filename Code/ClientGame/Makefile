@@ -57,7 +57,9 @@ SRCS =								\
 	Main.cpp						\
 	Units.cpp						\
 	Planes.cpp						\
-	Target.cpp
+	Target.cpp						\
+	Cards.cpp
+
 
 SYSOBJS = $(patsubst %.cpp,%.o,$(SYSSRCS))
 OBJS = $(patsubst %.cpp,%.o,$(SRCS))
