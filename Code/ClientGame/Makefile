@@ -54,7 +54,8 @@ SYSSRCS = 							\
 
 SRCS =								\
 	stdafx.cpp						\
-	Main.cpp
+	Main.cpp						\
+	Units.cpp						
 
 SYSOBJS = $(patsubst %.cpp,%.o,$(SYSSRCS))
 OBJS = $(patsubst %.cpp,%.o,$(SRCS))
