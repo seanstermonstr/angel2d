@@ -1,5 +1,6 @@
 
 #include "stdafx.h"
+#include "EagleManager.h"
 
 
 int main(int argc, char* argv[])
@@ -20,6 +21,9 @@ int main(int argc, char* argv[])
 	//YOUR GAME SETUP CODE HERE
 	
 	
+    theWorld.SetGameManager(&EagleGame);
+
+
 	
 	
 	
