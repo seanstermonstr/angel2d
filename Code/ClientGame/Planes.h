@@ -1,20 +1,19 @@
 #include "Units.h"
 
+
 class Planes : public Units
 {
 
 public:
 	Planes();	//Constructor
+	Planes(int newSpeed, int newAirCombatValue, int newBombingCombatValue, bool landed, std::string distanceType); //Second Constructor
 
 	//Retrieves data members of objects
-	int GetSpeed();		
-	int GetAirCombatValue();
-	int GetBombingCombatValue();
-	bool GetVisibilityStatus();
-	bool GetLandedStatus();
-	string GetDistanceType();
-	string GetNation();
-	string GetStatus();
+	int getSpeed();		
+	int getAirCombatValue();
+	int getBombingCombatValue();
+	bool getLandedStatus();
+	std::string getDistanceType();
 
 
 private:
@@ -22,6 +21,6 @@ private:
 	int airCombatValue;		
 	int bombingCombatValue;
 	bool landed;			//A plane can either be landed or in air
-	string distanceType;	//i.e short, long 
+	std::string distanceType;	//i.e short, long 
 };
 
