@@ -58,7 +58,8 @@ SRCS =								\
 	Units.cpp						\
 	Planes.cpp						\
 	Target.cpp						\
-	Cards.cpp
+	Cards.cpp                       \
+    EagleManager.cpp
 
 
 SYSOBJS = $(patsubst %.cpp,%.o,$(SYSSRCS))
@@ -88,3 +89,5 @@ clean:
 
 $(LIBANGEL):
 	cd ../Angel && make
+
+
