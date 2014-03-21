@@ -90,9 +90,4 @@ clean:
 $(LIBANGEL):
 	cd ../Angel && make
 
-
-<<<<<<< HEAD
-=======
-
 # vim: set tabstop=4 shiftwidth=4 noexpandtab:
->>>>>>> 92df309a3a1395b60099b2813ea79d6794a96556
