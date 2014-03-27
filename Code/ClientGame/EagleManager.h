@@ -22,13 +22,25 @@ protected:
 
 };
 
+//EagleManager is a singleton and inherits from:
+//  GameManager -- so we receive update and render calls, plus collision notification
+
 #define EagleGame EagleManager::GetInstance()
 
 class EagleManager : public GameManager
 {
 public:
+    
+    void MoveForwards();
+    void MoveBackwards();
 
     static EagleManager &GetInstance();
+
+    Screen* GetCurrentScreen();
+
+    virtual void Render();
+
+    virtual void ReceiveMessage(Message* message);
 
 protected:
     EagleManager();
