@@ -10,6 +10,13 @@ class Screen: public Renderable
 public:
     Screen();
 
+    virtual void Start();
+    virtual void Stop();    //calls remove on all _objects and delates them
+    virtual void Update(float dt);
+    virtual void Render();
+
+    virtual void ReceiveMssage(Message *message) {}
+
 protected:
     std::vector<Renderable*> _objects;
 
