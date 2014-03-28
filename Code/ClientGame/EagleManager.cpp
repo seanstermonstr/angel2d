@@ -1,9 +1,12 @@
 
-//#include "stdafx.h"
+#include "stdafx.h"
 #include "EagleManager.h"
+#include "./Screens/test.h"
+#include "./Screens/test1.h"
 
 using namespace std;
 
+//Start Screens Class Definition
 Screen::Screen() {}
 
 void Screen::Start() {}
@@ -23,6 +26,7 @@ void Screen::Update(float dt) {}
 
 void Screen::Render() {}
 
+//Start Eagle Manager Class Definition
 EagleManager* EagleManager::s_EagleManager = NULL;
 
 EagleManager::EagleManager()
@@ -32,6 +36,9 @@ EagleManager::EagleManager()
     theSwitchboard.SubscribeTo(this, "MoveBackwards");
 
     //push screens to display here
+
+    _screens.push_back(new DemoScreenStart());
+    _screens.push_back(new DemoScreenInstructions());
 
     //end screens
 
