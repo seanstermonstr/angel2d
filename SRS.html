@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Drunken Adventure</title>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+
+
+<div id="container">
+
+	<div id="wrapper">
+		<div id="content">
+		<h2>1.0 Introduction</h2>
+
+		<p><strong>1.1 The purpose of this document</strong></p>
+		<p>This is the Drunken Adventure software requirement specification document for the Eagle Day Software. This document will provide a general description of the game along with the software requirements. The final product will be traceable to this requirements document.</p>
+		<p><strong>1.2 The scope of this product</strong></p>
+		<p>The Eagle Day Software is a 32-bit Windows application. The application targets users who are familiar with the rules. The application replicates the historical simulation board game Eagle Day. The application is written in Lua using the Love library.</p>
+		<p><strong>1.3 Definitions, Acronyms, and Abbreciations</strong></p>
+		<p>
+			<ul>
+				<li><strong>Application - </strong>The Eagle Day software.</li>
+				<li><strong>Biola - </strong>Bible Institute Of Las Angeles.</li>
+				<li><strong>Client - </strong>The customer, The recipient and requestor of the software.</li>
+				<li><strong>Decision Games - </strong>Company that made Eagle Day: The Battle For Britain</li>
+				<li><strong>Dr. McCarty - </strong>A computer science professor at Biola University that teaches CSCI 450 Software Engineering.</li>
+				<li><strong>Drunken Adventure - </strong>The team developing Eagle Day, made up of Isaac Obrist, Micah Nakamura, and James Dawson.</li>
+				<li><strong>Eagle Day - </strong>The software project being developed by Drunken Adventure based off Eagle Day: The Battle For Britain by Decision Games.</li>
+				<li><strong>Eagle Day: The Battle For Britain - </strong>The board game.</li>
+				<li><strong>HTML - </strong>HyperText Markup Language used for creating web pages.</li>
+				<li><strong>Git - </strong>A distributed revision control and SCM system with an emphasis on speed, designed and developed by Linus Torvalds for Linux.</li>
+				<li><strong>GitHub - </strong>A web-based hosting service for software development projects that use the Git revision control system.</li>
+				<li><strong>GUI - </strong>Graphical User Interface.</li>
+				<li><strong>Kernel - </strong>a part of an operating system that handles control of all running processes.</li>
+				<li><strong>Linux - </strong>A Unix-like opperating system ketnel.</li>
+				<li><strong>LOVE - </strong>An open-source framework for making 2D games in the Lua programming language.</li>
+				<li><strong>Lua - </strong>A lightweight, cross-platform, multi-paradigm programming language designed as a scripting language.</li>
+				<li><strong>Multimedia - </strong>Content that uses a combination of different dontent forms, such as text, images, or interactivity.</li>
+				<li><strong>PMP - </strong>Project Management Plan</li>
+				<li><strong>Revision Control</strong>Also known as Source Code Management(SCM).</li>
+				<li><strong>SCM - </strong>Source Code Management – version control and system control allowing the management of changes to documents, computer programs, large web sites, and other collections of information.</li>
+				<li><strong>SCMP - </strong>Software Configuration Management Plan.</li>
+				<li><strong>SDD - </strong>Software Design Document.</li>
+				<li><strong>SQAP - </strong>Software Quality Assurance Plan.</li>
+				<li><strong>SRS - </strong>Software Requirements Specification document.</li>
+				<li><strong>STP - </strong>Software Test Plan.</li>
+				<li><strong>SUM - </strong>Software User Manual.</li>
+			</ul>
+
+		</p>
+		<p><strong>1.4 References</strong></p>
+		<!-- Please add content for this section -->
+		<p>Some text.</p>
+		<p><strong>1.5 Overview of the rest of SRS</strong></p>
+		<!-- Please add content for this section -->
+		<p>Some text.</p>
+
+		<h2>2.0 General Description</h2>
+		<p><strong>2.1 Procuct Perspective</strong></p>
+		<p>Eagle Day is a multimedia application that replicates the historical simulation board game, “Eagle Day: The Battle For Britain” designed by Decision Games. Eagle Day provides a means of playing Eagle Day: The Battle For Britain. It allows two players to play against each other via network or locally on the same computer. Eagle Day also allows a single player to play against a computer.</p>
+		<p>A rudementary representation of this is as follows.</p>
+		<!-- Jimmy or Micah please resize this image to something that looks more preportional. Do not do it in the html/css itself, but change the actual image.-->
+		<img src="chart.jpg">
+
+		<p><strong>2.2 Product Features</strong></p>
+		<p>The following traceability matrix describes all the requirements placed on the development team by the client. The client requirements described below was listed in the problem description for a system modeling tool. The client requirements act as a contract between the client and the development team, ensuring that Eagle Day meet the expectations of the client. In addition to the client requirements, several requirements have been derived from the list of client requirements. Every requirement described in this section shall be described later in this document at the locations specified in the reference column. </p>
+		<p>
+			<table>
+				<tr>
+					<th>Number</th>
+					<th>Client Requirement or Constrain</th>
+					<th>References</th>
+				</tr>
+				<tr>
+					<td>CR01</td>
+					<td>Create a freeware 32 bit Windows Application</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>CR02</td>
+					<td>This applications shall be implimented using Lua with LOVE.</td>
+					<td>3.1.1.1</td>
+				</tr>
+				<tr>
+					<td>CR03</td>
+					<td>Whenever the application detects an error condition, a suitable error message shall be displayed to the user.</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>CR04</td>
+					<td>Should be supported under Windows.</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>CR05</td>
+					<td>The tool shall have an easy to use graphical user interface (GUI).</td>
+					<td>(3.1.1.1, 3.1.1.3, 3.1.1.4)</td>
+				</tr>
+				<tr>
+					<td>CR06</td>
+					<td>The application should be able to have two players play locally on the same computer.</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>CR07</td>
+					<td>The application should be able to have two players play across a network.</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>CR08</td>
+					<td>The application should allow for a single player to play against an AI computer.</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>CR09</td>
+					<td>The application should be a program that can be used to run the Eagle Day game software.</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>CR10</td>
+					<td>The application should accurately portray the Eagle Day: The Battle For Britain game board.</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>CR11</td>
+					<td>The application should accurately portray the Eagle Day: The Battle For Britain game pieces.</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>CR12</td>
+					<td>The application should accurately portray the Eagle Day: The Battle For Britain game play.</td>
+					<td></td>
+				</tr>
+				<!--
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr> -->
+			</table>
+		</p>
+		<p><strong>2.3 User Characteristics</strong></p>
+		<p>Users are expected to be able to user a mouse and navigate through a Windows environment in order to use Eagle Day. Users are expected to either already know and understand the rules of Eagle Day: The Battle of Britain or learn for them self using the rules that will be provided in the application.</p>
+
+		<p><strong>2.4 General Constraints</strong></p>
+		<p>Eagle Day shall be designed to run on a computer running a version of Windows 7 or Window 8. The computer should be compatible with the LÖVE framework.</p>
+
+		<p><strong>2.5 Assumptions and Dependencies</strong></p>
+		<p>
+		The Eagle Day application assumes that, or depends upon, the following environmental characteristic being present for full functionality:
+			<ol>
+				<li>The General Constraints listed in section 2.4 of the SRS are met</li>
+				<li>The customer shall have permission to install the Eagle Day application on the required workstation(s).</li>
+			</ol>
+		</p>
+
+		<h2>3.0 Software Requirements</h2>
+
+		<p><strong>3.1 Behavioral Requirements</strong></p>
+		<p>This section of the SRS provides the behavioral requirements of Eagle Day</p>
+
+
+		<!-- Do not number anything after 3.1.1.1. ie do not add another . There shall be no 3.1.1.1.1 its a formating nightmare !!!!-->
+		<p>3.1.1 Graphical User Interface</p>
+		<p>
+			<ul>
+				<li>3.1.1.1: The display should respond to mouse movements.</li>
+				<li>3.1.1.2: The GUI will be coded using LOVE.</li>
+				<li>3.1.1.3: When the Eagle Day executable file is run, there will be a graphical user interface.</li>
+				<li>3.1.1.4: The GUI will involve a realistic map of the board.</li>
+				<li>3.1.1.5: There will be players that will be easy to differentiate.</li>
+			</ul>
+		</p>
+		<h2>4.0 System Features</h2>
+
+		<p><strong>4.1 New Game</strong></p>
+		<p>The title screen will give the suer the option to start a new game and specify how and who they will play against.</p>
+		<p>4.1.1 Response Sequences</p>
+		<p>
+			<table>
+				<tr>
+					<td>UC 01</td>
+					<td>The user starts a new game.</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>The application will initiate a new game.</td>
+				</tr>
+				<tr>
+					<td>Precondition</td>
+					<td>The application is running and is on the title screen or in-game menu screen.</td>
+				</tr>
+				<tr>
+					<td>Post-condition</td>
+					<td>The application will prompt the user to choose how and who they will play against.</td>
+				</tr>
+				<tr>
+					<td>Normal Sequence</td>
+					<td>
+						<ul>
+							<li>The user starts the application.</li>
+							<li>The user clicks New Game.</li>
+							<li>The application initiates a new game from the title screen or the in-game menu screen.</li>
+							<li>The application prompts the user to save the current game (if in game).</li>
+							<li>The application prompts the user to select how and who they will play against.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			<p>
+			</p>
+			<table>
+				<tr>
+					<td>UC 02</td>
+					<td>The user selects Network Play for two human players.</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>The application initiates a new game against another human over a network.</td>
+				</tr>
+				<tr>
+					<td>Precondition</td>
+					<td>The computer has network connection capabilities and the user selected the option to start a new game.</td>
+				</tr>
+				<tr>
+					<td>Post-condition</td>
+					<td>An opponent is found on a network and the application initiates a new game ready to be played.</td>
+				</tr>
+				<tr>
+					<td>Normal Sequence</td>
+					<td>
+						<ul>
+							<li>The user selects New Game.</li>
+							<li>The user selects to play over a network with another human player.</li>
+							<li>The application searches for an opponent.</li>
+							<li>The application finds an opponent.</li>
+							<li>The application initiates a new game ready to start.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			<p>
+			</p>
+			<table>
+				<tr>
+					<td>UC 03</td>
+					<td>The user selects Face-To-Face play for two human players.</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>The application initiates a new game for two humans on the same computer.</td>
+				</tr>
+				<tr>
+					<td>Precondition</td>
+					<td>The user selected New Game.</td>
+				</tr>
+				<tr>
+					<td>Post-condition</td>
+					<td>The application initiates a new game to be played by two humans on the same computer.</td>
+				</tr>
+				<tr>
+					<td>Normal Sequence</td>
+					<td>
+						<ul>
+							<li>The user selects New Game.</li>
+							<li>The user selects Face-To-Face.</li>
+							<li>The application initiates a new game ready to start.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			<p>
+			</p>
+			<table>
+				<tr>
+					<td>UC 04</td>
+					<td>The user selects Single Player to play against an AI.</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>The application initiates a new game for one player to play against an AI computer.</td>
+				</tr>
+				<tr>
+					<td>Precondition</td>
+					<td>The user selects New Game.</td>
+				</tr>
+				<tr>
+					<td>Post-condition</td>
+					<td>The application initiatesa new game ready to be played.</td>
+				</tr>
+				<tr>
+					<td>Normal Sequence</td>
+					<td>
+						<ul>
+							<li>The user selects New Game.</li>
+							<li>The user selects Single Player.</li>
+							<li>The application initiates a new game ready to start.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			<p>4.1.2 Functional Requirements</p>
+				<ul>
+					<li>REQ-1: The application shall be able to run.</li>
+					<li>REQ-2: The application shall be able to initiate a new game.</li>
+					<li>REQ-3: The application shall be able to connect to a network and find another player.</li>
+				</ul>
+		</p>
+		<p><strong>4.2 Save Game</strong></p>
+		<p>In the in-game menu, the user shall have the option to save their current game.</p>
+		<p>4.2.1 Response Sequences</p>
+		<p>
+			<table>
+				<tr>
+					<td>UC 05</td>
+					<td>The user saves the game.</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>The application will ask to save the current game if necessary from a dialog, a save game file is picked and loaded.</td>
+				</tr>
+				<tr>
+					<td>Precondition</td>
+					<td>A game is in progress.</td>
+				</tr>
+				<tr>
+					<td>Post-condition</td>
+					<td>The current game state is saved into memory.</td>
+				</tr>
+				<tr>
+					<td>Normal Sequence</td>
+					<td>
+						<ul>
+							<li>The user is playing the game.</li>
+							<li>The user opens the in-game menu and selects Save Game.</li>
+							<li>The application opens a dialog to save the game with the option to pick the name of the file.</li>
+							<li>The application returns to the previous screen (Title or in-game menu).</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</p>
+		<p>4.2.2 Functional Requirements</p>
+			<ul>
+				<li>REQ-4: The application shall be able to save the current game information to a file.</li>
+			</ul>
+		<p><strong>4.3 Load Game</strong></p>
+		<p>The user shall be able to load a previously saved game from a file.</p>
+		<p>4.3.1 Response Sequences.</p>
+		<p>
+			<table>
+				<tr>
+					<td>UC 06</td>
+					<td>The user loads a saved game file.</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>The application will ask to save the current game if necessary from a dialog, a saved game file is picked and loaded.</td>
+				</tr>
+				<tr>
+					<td>Precondition</td>
+					<td>A saved game file is available</td>
+				</tr>
+				<tr>
+					<td>Post-condition</td>
+					<td>The application has loaded the saved game file and is being played.</td>
+				</tr>
+				<tr>
+					<td>Normal Sequence</td>
+					<td>
+						<ul>
+							<li>The user is on the title screen or in-game menu.</li>
+							<li>The user selects Load Game.</li>
+							<li>The application opens a dialog asking to save the current game if applicable and saves if selected.</li>
+							<li>The application opens a dialog to load a saved game file from the computer.</li>
+							<li>After a saved file is picked the appilcation loads the file.</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>Exception</td>
+					<td>
+						<ul>
+							<li>Condition: No save file is selected</li>
+							<li>Action: The application waits fro teh user to cancel out of the dialog box.</li>
+							<li>Ending: The application returns to the pause menu (if in game) or main menu (not in game).</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</p>
+		<p>4.3.2 Functional Requirements</p>
+			<ul>
+				<li>REQ-5: The application shall be able to load information from a saved game file.</li>
+			</ul>
+		<p><strong>4.4 Interactive Game Board</strong></p>
+		<p>The main feature in the game will be the game board. The game board will feature similar pieces, campaign cards, and map to the Eagle Day: Battle For Britain board game.</p>
+		<p>4.4.1 Response Sequences.</p>
+		<p>
+			<table>
+				<tr>
+					<td>UC 07</td>
+					<td>The user selects and moves a piece.</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>The application changes the position of the piece to the newly selected location.</td>
+				</tr>
+				<tr>
+					<td>Precondition</td>
+					<td>A game is in progress.</td>
+				</tr>
+				<tr>
+					<td>Post-condition</td>
+					<td>The application will show the new position of the moved piece.</td>
+				</tr>
+				<tr>
+					<td>Normal Sequence</td>
+					<td>
+						<ul>
+							<li>The user selects and moves a piece.</li>
+							<li>It is the users turn and the user selects a piece and where to move it.</li>
+							<li>The application changes the position of the piece.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			<p>
+			</p>
+			<table>
+				<tr>
+					<td>UC 08</td>
+					<td>The user uses a unit to attack another unit.</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>The application calculates the outcome of attack.</td>
+				</tr>
+				<tr>
+					<td>Precondition</td>
+					<td>A game is in progress.</td>
+				</tr>
+				<tr>
+					<td>Post-condition</td>
+					<td>The outcome of attack is displayed.</td>
+				</tr>
+				<tr>
+					<td>Normal Sequence</td>
+					<td>
+						<ul>
+							<li>The user is playing the game.</li>
+							<li>It is the user's turn and a valid attacking phase.</li>
+							<li>The user selects a unit to attack with.</li>
+							<li>The user selects a valid unit to attack.</li>
+							<li>The application calculates and displays the outcome of attack.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+			<p>
+			</p>
+			<table>
+				<tr>
+					<td>UC 09</td>
+					<td>The user plays a campaign card.</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>The application performs the specifics of the campaign card.</td>
+				</tr>
+				<tr>
+					<td>Precondition</td>
+					<td>A game is in progress. The player has a campaign card to play.</td>
+				</tr>
+				<tr>
+					<td>Post-condition</td>
+					<td>The results of the campaign card are applied and displayed.</td>
+				</tr>
+				<tr>
+					<td>Normal Sequence</td>
+					<td>
+						<ul>
+							<li>The user is playing the game.</li>
+							<li>It is the user's turn and has a campaign card to play.</li>
+							<li>The user selects a campaign card to play</li>
+							<li>The application appies and displays the specifics of the campaign card.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</p>
+		<p>4.4.2 Functional Requirements</p>
+			<ul>
+				<li>REQ-6: The application shall be able to display and change the location of the game pieces.</li>
+				<li>REQ-7: The application shall be able to store in-game stats, change them, and display changes.</li>
+			</ul>
+		<p><strong>4.5 Rules</strong></p>
+		<p>The user shall be able to access the game rules from the title screen or the in-game menu.</p>
+		<p>4.5.1 Response Sequences</p>
+		<p>
+			<table>
+				<tr>
+					<td>UC 10</td>
+					<td>The user accesses the game rules.</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>The application will display the game rules.</td>
+				</tr>
+				<tr>
+					<td>Precondition</td>
+					<td>The application is running and is on the title screen or in-game menu.</td>
+				</tr>
+				<tr>
+					<td>Post-condition</td>
+					<td>The game rules document is displayed.</td>
+				</tr>
+				<tr>
+					<td>Normal Sequence</td>
+					<td>
+						<ul>
+							<li>The application is running</li>
+							<li>The user accesses the game rules.</li>
+							<li>The application displays the game rules document.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</p>
+		<p>4.5.2 Functional Requirements</p>
+			<ul>
+				<li>REQ-8: The application shall contain an accessable game rules document.</li>
+			</ul>
+		<p><strong>4.6 Exit Game</strong></p>
+		<p>The user shall be able to exit the application from in-game or the Title page.</p>
+		<p>4.6.1 Response Sequences</p>
+		<p>
+			<table>
+				<tr>
+					<td>UC 11</td>
+					<td>The player wants to quit the application.</td>
+				</tr>
+				<tr>
+					<td>Description</td>
+					<td>The application quits running.</td>
+				</tr>
+				<tr>
+					<td>Precondition</td>
+					<td>The application is running.</td>
+				</tr>
+				<tr>
+					<td>Post-condition</td>
+					<td>The application is closed.</td>
+				</tr>
+				<tr>
+					<td>Normal Sequence</td>
+					<td>
+						<ul>
+							<li>The application is running.</li>
+							<li>The player selects exit from either in-game or the Title Page.</li>
+							<li>The application prompts the user to save the current game if applicable.</li>
+							<li>The application closes.</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</p>
+		<p>4.6.2 Functional Requirements</p>
+			<ul>
+				<li>REQ-9: The game shall be able to close.</li>
+			</ul>
+		</div>
+	</div>
+
+	<div id="navigation">
+		<p><strong>Menu</strong></p>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="SRS.html">SRS</a></li>
+			<li><a href="SDD.html">SDD</a></li>
+
+		</ul>
+	</div>
+	<div id="extra">
+		<p><strong>Page Map</strong></p>
+	</div>
+	<div id="footer">
+		<p>This is the footer</p>
+	</div>
+
+</div>
+
+
+
+</body>
+</html>
