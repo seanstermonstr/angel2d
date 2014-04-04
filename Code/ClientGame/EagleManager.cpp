@@ -3,6 +3,7 @@
 #include "EagleManager.h"
 #include "./Screens/test.h"
 #include "./Screens/test1.h"
+#include "./Screens/GameScreen.h"
 
 using namespace std;
 
@@ -37,6 +38,7 @@ EagleManager::EagleManager()
 
     //push screens to display here
 
+    _screens.push_back(new GameScreen());
     _screens.push_back(new DemoScreenStart());
     _screens.push_back(new DemoScreenInstructions());
 

@@ -6,7 +6,8 @@
 
 class GameScreen : public Screen
 {
-    GameScreenStart();
+public:
+    GameScreen();
 
     virtual void Start();
     virtual void Stop();
