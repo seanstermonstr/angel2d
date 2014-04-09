@@ -5,8 +5,8 @@
 #include "GameScreen.h"
 #include <sstream>
 #include <string>
-#define MAP_X 17
-#define MAP_Y 12
+#define MAP_X 12
+#define MAP_Y 17
 using namespace std;
 
 GameScreen::GameScreen(){
@@ -16,9 +16,10 @@ GameScreen::GameScreen(){
 void GameScreen::Start(){
 
     //inits the game state
+    float x = -6, y = -8;
+    
     vector< vector<Actor*> > _map;
     _map.resize(MAP_X);
-    float x = -8, y = -6;
     
     for (int i = 0; i < _map.size(); i++)
     {
@@ -27,12 +28,7 @@ void GameScreen::Start(){
         for (int j = 0; j < _map[i].size() - 1; j++)
         {   
             std::stringstream path;
-            path << "Resources/Tiles/" << i + 1 << "_" << j + 1 << ".png";
-            //path.str();
-           // std::string test;
-            //string test;
-            //test = "Resources/Tiles" + (i+1) + "
-            //test = path;
+            path << "Resources/Tiles/" << i + 1 << "_" << 16 - j << ".png";
             _map[i][j] = new Actor();
             _map[i][j] -> SetPosition(x + i, y + j);
             _map[i][j] -> SetColor (1, 1, 1, 1);
