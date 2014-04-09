@@ -60,6 +60,7 @@ SRCS =								\
     EagleManager.cpp                \
     Screens/test.cpp                \
     Screens/test1.cpp               \
+    Screens/GameScreen.cpp          \
     stdafx.cpp                      \
     Main.cpp                        
 
