@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include <vector>
 #include <string>
+#include <../Angel/UI/UserInterface.h>
 
 class Screen: public Renderable
 {

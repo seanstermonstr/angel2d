@@ -13,14 +13,21 @@ GameScreen::GameScreen(){
 }
 
 void GameScreen::Start(){
-
     //inits the game state
-    float x = -10, y = -8;
-    
+	
+	//Initializes the background
+	Actor *background = new Actor();
+	background -> SetPosition(0,0);
+	background -> SetColor(0.5, 0.5, 0.5, 1);
+	background -> SetDrawShape(ADS_Square);
+	background -> SetSize(30.0f);
+	theWorld.Add(background);
+
+
+	//Initializes the Game Map
+    float x = 0, y = -8;  
     vector< vector<Actor*> > _map;
     _map.resize(MAP_X);
-    
-    
     for (int i = 0; i < _map.size(); i++)
     {
         _map[i].resize(MAP_Y);
@@ -39,6 +46,9 @@ void GameScreen::Start(){
             theWorld.Add(_map[i][j]);	//Calls the actor into existence
         }
     }
+
+	//This is a button test
+	
 }
 
 void GameScreen::Stop(){
