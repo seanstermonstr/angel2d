@@ -1,4 +1,3 @@
-
 #include "../stdafx.h"
 #include "../EagleManager.h"
 #include "../Units/Units.h"
@@ -16,10 +15,11 @@ GameScreen::GameScreen(){
 void GameScreen::Start(){
 
     //inits the game state
-    float x = -6, y = -8;
+    float x = -10, y = -8;
     
     vector< vector<Actor*> > _map;
     _map.resize(MAP_X);
+    
     
     for (int i = 0; i < _map.size(); i++)
     {
@@ -27,16 +27,16 @@ void GameScreen::Start(){
         
         for (int j = 0; j < _map[i].size() - 1; j++)
         {   
-            std::stringstream path;
-            path << "Resources/Tiles/" << i + 1 << "_" << 16 - j << ".png";
-            _map[i][j] = new Actor();
+            std::stringstream path;	//Allows for string manipulation
+            path << "Resources/Tiles/" << i + 1 << "_" << 16 - j << ".png";	//Iterates through every tile filename	
+            _map[i][j] = new Actor();	//Defines a new actor 
             _map[i][j] -> SetPosition(x + i, y + j);
             _map[i][j] -> SetColor (1, 1, 1, 1);
-            _map[i][j] -> SetDrawShape(ADS_Square);
+            _map[i][j] -> SetDrawShape(ADS_Square);	
             _map[i][j] -> SetSize (1.0f);
             _map[i][j] -> ClearSpriteInfo();
-            _map[i][j] -> SetSprite(path.str());
-            theWorld.Add(_map[i][j]);
+            _map[i][j] -> SetSprite(path.str());	//Maps the tile image to the square actor
+            theWorld.Add(_map[i][j]);	//Calls the actor into existence
         }
     }
 }
