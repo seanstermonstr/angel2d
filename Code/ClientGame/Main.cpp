@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 	//		bool antiAliasing		default: false
 	//		bool fullScreen			default: false
 	//		bool resizable			default: false
-	theWorld.Initialize();
+	theWorld.Initialize(1024,768,"Eagle Day",false);
 	
 	//adds the default grid so you can more easily place Actors
 	theWorld.Add(new GridActor(), -1);
