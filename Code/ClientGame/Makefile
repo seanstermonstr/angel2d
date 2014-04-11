@@ -17,7 +17,8 @@ INCLUDE = 							\
 	-I../Angel/Libraries/Box2D-2.2.1			\
 	-I../Angel/Libraries/FTGL/include			\
 	-I../Angel/Libraries/lua-5.2.1/src			\
-	-I/usr/include/freetype2
+	-I/usr/include/freetype2					\
+	-I../Angel/Libraries/gwen/include
 ifneq ($(ANGEL_DISABLE_FMOD), 1)
 	INCLUDE += -I../Angel/Libraries/FMOD/inc
 endif
@@ -61,7 +62,7 @@ SRCS =								\
     Screens/test.cpp                \
     Screens/test1.cpp               \
     Screens/GameScreen.cpp          \
-    stdafx.cpp                      \
+    stdafx.cpp						\
     Main.cpp                        
 
 
@@ -83,7 +84,7 @@ SWIG-Wrapper:
 
 $(WRAPPER): SWIG-Wrapper
 
-$(TARGET): $(LIBANGEL) $(OBJS) $(SYSOBJS) $(WRAPPER)
+$(TARGET): $(LIBANGEL) $(OBJS) $(SYSOBJS) $(WRAPPER) 
 	$(CXX) -o $@ $(OBJS) $(SYSOBJS) $(LIBS) $(SHLIBS) $(ANGEL_FLAGS)
 	cp -p ../Angel/Scripting/EngineScripts/*.lua Resources/Scripts
 
