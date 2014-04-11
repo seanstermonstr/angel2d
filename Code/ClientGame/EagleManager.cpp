@@ -1,4 +1,3 @@
-
 #include "stdafx.h"
 #include "EagleManager.h"
 #include "./Screens/test.h"
@@ -102,37 +101,7 @@ void EagleManager::MoveBackwards()
     }
 }
 
-void EagleManager::Render()
-{
-    glColor3f(0.5f, 0.5f, 0.5f);
-    char* infoString = "";
-    int xOffset = 0;
-    if (_current == 0)
-    {
-        infoString = "[A/Space]: Next";
-        xOffset = 887;
-    }
-    else if (_current == _screens.size() - 1)
-    {
-        infoString = "[Back/Minus]: Previous";
-        xOffset = 824;
-    }
-    else
-    {
-        infoString = "[A/Space]: Next [Back/Minus]: Previous";
-        xOffset = 680;
-    }
-
-    int yOffset = 763;
-    if (theWorld.IsHighResScreen())
-    {
-        // the perils of using pixel coordinates in a post-retina world
-        xOffset *= 2;
-        yOffset *= 2;
-    }
-
-    DrawGameText(infoString, "ConsoleSmall", xOffset, yOffset);
-}
+void EagleManager::Render(){}
 
 
 
