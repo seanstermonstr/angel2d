@@ -4,6 +4,7 @@
 #include "../Units/Units.h"
 #include "GameScreen.h"
 #include "../../Angel/Libraries/gwen/include/Gwen/Gwen.h"
+#include "../../Angel/UI/UserInterface.h"
 #include <sstream>
 #include <string>
 #define MAP_X 12
